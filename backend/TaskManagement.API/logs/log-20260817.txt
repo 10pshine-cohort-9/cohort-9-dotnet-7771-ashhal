@@ -1,0 +1,395 @@
+2026-08-17 19:50:54.467 +05:00 [INF] HTTP OPTIONS /api/auth/register responded 405 in 107.2699 ms
+2026-08-17 19:55:02.187 +05:00 [INF] HTTP OPTIONS /api/auth/register responded 405 in 8.2118 ms
+2026-08-17 20:02:08.370 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-08-17 20:02:09.362 +05:00 [INF] Attempting user registration.
+2026-08-17 20:02:16.016 +05:00 [ERR] Failed executing DbCommand (147ms) [Parameters=[@__email_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[PasswordHash], [u].[Role], [u].[UpdatedAt], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2026-08-17 20:02:16.174 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagement.Infrastructure.Data.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:16.214 +05:00 [ERR] HTTP POST /api/auth/register responded 500 in 7552.6397 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:16.512 +05:00 [ERR] An unhandled exception occurred
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagement.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Middleware\ExceptionMiddleware.cs:line 31
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:23.710 +05:00 [INF] Attempting user registration.
+2026-08-17 20:02:23.814 +05:00 [ERR] Failed executing DbCommand (11ms) [Parameters=[@__email_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[PasswordHash], [u].[Role], [u].[UpdatedAt], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2026-08-17 20:02:23.829 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagement.Infrastructure.Data.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:23.862 +05:00 [ERR] HTTP POST /api/auth/register responded 500 in 164.1544 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:23.917 +05:00 [ERR] An unhandled exception occurred
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagement.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Middleware\ExceptionMiddleware.cs:line 31
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:28.865 +05:00 [INF] Attempting user registration.
+2026-08-17 20:02:29.134 +05:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[PasswordHash], [u].[Role], [u].[UpdatedAt], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2026-08-17 20:02:29.147 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagement.Infrastructure.Data.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:29.176 +05:00 [ERR] HTTP POST /api/auth/register responded 500 in 326.7672 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:02:29.216 +05:00 [ERR] An unhandled exception occurred
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Users'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TaskManagement.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Infrastructure\Repositories\UserRepository.cs:line 38
+   at TaskManagement.Core.Services.AuthService.Register(String username, String email, String password) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.Core\Services\AuthService.cs:line 38
+   at TaskManagement.API.Controllers.AuthController.Register(RegisterDto request) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Controllers\AuthController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at TaskManagement.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\IBA\10Pearls Internship\cohort-9-dotnet-7771-ashhal\backend\TaskManagement.API\Middleware\ExceptionMiddleware.cs:line 31
+ClientConnectionId:f3d276a4-7265-47d7-aadc-cd19ac57fcf6
+Error Number:208,State:1,Class:16
+2026-08-17 20:13:43.898 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-08-17 20:13:44.532 +05:00 [INF] Attempting user registration.
+2026-08-17 20:13:49.010 +05:00 [INF] User registered successfully.
+2026-08-17 20:13:49.098 +05:00 [INF] HTTP POST /api/auth/register responded 200 in 4951.0705 ms
+2026-08-17 20:15:49.441 +05:00 [INF] Attempting user login.
+2026-08-17 20:15:50.300 +05:00 [INF] User logged in successfully.
+2026-08-17 20:15:50.308 +05:00 [INF] HTTP POST /api/auth/login responded 200 in 900.7794 ms
+2026-08-17 20:35:46.457 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-08-17 20:35:47.756 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:35:47.803 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:35:53.106 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:35:53.109 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:35:56.205 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:35:56.205 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:35:56.206 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:35:56.207 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:35:56.357 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 9260.8824 ms
+2026-08-17 20:35:56.359 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 3258.2615 ms
+2026-08-17 20:35:56.359 +05:00 [INF] HTTP GET /api/tasks responded 200 in 3245.3533 ms
+2026-08-17 20:35:56.359 +05:00 [INF] HTTP GET /api/tasks responded 200 in 9260.8786 ms
+2026-08-17 20:35:56.362 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:35:56.363 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:35:56.430 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:35:56.430 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:35:56.437 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 78.2089 ms
+2026-08-17 20:35:56.446 +05:00 [INF] HTTP GET /api/tasks responded 200 in 85.1441 ms
+2026-08-17 20:36:36.841 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:36:36.855 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:36:36.888 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:36:36.917 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 76.9701 ms
+2026-08-17 20:36:36.935 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:36:36.950 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:36:36.973 +05:00 [INF] HTTP GET /api/tasks responded 200 in 119.5386 ms
+2026-08-17 20:36:36.976 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:36:36.984 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:36:37.007 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 73.1582 ms
+2026-08-17 20:36:37.030 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:36:37.049 +05:00 [INF] HTTP GET /api/tasks responded 200 in 65.9387 ms
+2026-08-17 20:42:09.632 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:42:09.657 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:42:09.665 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:42:09.695 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 65.6252 ms
+2026-08-17 20:42:09.716 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:42:09.723 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:42:09.743 +05:00 [INF] HTTP GET /api/tasks responded 200 in 87.2854 ms
+2026-08-17 20:42:09.756 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:42:09.779 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:42:09.789 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 73.0435 ms
+2026-08-17 20:42:09.810 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:42:09.820 +05:00 [INF] HTTP GET /api/tasks responded 200 in 65.8164 ms
+2026-08-17 20:44:01.644 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:44:01.669 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:44:01.742 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:44:01.798 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 155.1734 ms
+2026-08-17 20:44:01.818 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:44:01.837 +05:00 [INF] HTTP GET /api/tasks responded 200 in 168.3298 ms
+2026-08-17 20:44:05.995 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:44:06.024 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:44:06.035 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:44:06.054 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 59.6570 ms
+2026-08-17 20:44:06.086 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:44:06.095 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:44:06.132 +05:00 [INF] HTTP GET /api/tasks responded 200 in 100.7111 ms
+2026-08-17 20:44:06.145 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:44:06.179 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:44:06.180 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:44:06.198 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 117.1789 ms
+2026-08-17 20:44:06.207 +05:00 [INF] HTTP GET /api/tasks responded 200 in 67.1776 ms
+2026-08-17 20:47:56.062 +05:00 [INF] Attempting user login.
+2026-08-17 20:47:57.391 +05:00 [INF] User logged in successfully.
+2026-08-17 20:47:57.405 +05:00 [INF] HTTP POST /api/auth/login responded 200 in 1467.9608 ms
+2026-08-17 20:47:57.544 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:47:57.570 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:47:57.587 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:47:57.876 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 332.2966 ms
+2026-08-17 20:47:57.943 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:47:57.973 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:47:57.976 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:47:57.980 +05:00 [INF] HTTP GET /api/tasks responded 200 in 410.9436 ms
+2026-08-17 20:47:57.991 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 50.0225 ms
+2026-08-17 20:47:57.999 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:47:58.027 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:47:58.039 +05:00 [INF] HTTP GET /api/tasks responded 200 in 40.4635 ms
+2026-08-17 20:52:45.078 +05:00 [INF] User 1 (IsAdmin: false) fetching dashboard stats
+2026-08-17 20:52:45.147 +05:00 [INF] User 1 (IsAdmin: false) fetching tasks with filters.
+2026-08-17 20:52:45.305 +05:00 [INF] User 1 fetched 0 tasks.
+2026-08-17 20:52:45.305 +05:00 [INF] User 1 stats: Total=0, Completed=0, InProgress=0, Pending=0
+2026-08-17 20:52:45.310 +05:00 [INF] HTTP GET /api/tasks responded 200 in 164.1705 ms
+2026-08-17 20:52:45.313 +05:00 [INF] HTTP GET /api/dashboard/stats responded 200 in 234.9043 ms
