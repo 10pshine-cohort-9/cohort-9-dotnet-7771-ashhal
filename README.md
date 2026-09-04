@@ -10,14 +10,14 @@
 
 ## 📋 Quick Start
 
-### Prerequisites/ SKIP TO ONE CLICK COMMANDS IF ALREADY INSTALLED
+### Prerequisites / SKIP TO ONE CLICK COMMANDS IF ALREADY INSTALLED
 
 | Tool | Version | Installation |
 |------|---------|--------------|
-| **.NET SDK** | **10.0** | [Download](https://dotnet.microsoft.com/download) |
-| Node.js | 18.0+ | [Download](https://nodejs.org/) |
-| **SQL Server** | **2019+ or LocalDB** | [Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) |
-| Git | Latest | [Download](https://git-scm.com/) |
+| **.NET SDK** | **10.0** | [Download .NET 10.0](https://dotnet.microsoft.com/download/dotnet/10.0) |
+| **Node.js** | 18.0+ | [Download Node.js](https://nodejs.org/) |
+| **SQL Server** | **2019+ or LocalDB** | [Download SQL Server 2022 Express]((https://www.microsoft.com/en-us/download/details.aspx?id=104781)) |
+| **Git** | Latest | [Download Git](https://git-scm.com/) |
 
 ---
 
@@ -27,7 +27,7 @@
 The project uses SQL Server LocalDB for development. Follow these steps:
 
 Step 1: Download SQL Server 2022 Express
-Go to: https://go.microsoft.com/fwlink/p/?linkid=2216019
+Go to: https://www.microsoft.com/en-us/download/details.aspx?id=104781
 
 Download SQL2022-SSEI-Expr.exe
 
